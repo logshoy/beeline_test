@@ -3,10 +3,22 @@
     <HeaderSlider />
     <ListSlider />
   </div>
+  <div>
+    <HeaderSlider />
+    <ListSlider />
+  </div>
 </template>
 
 <script>
-export default {};
+import HeaderSlider from "@/components/Main/HeaderSlider.vue";
+import ListSlider from "@/components/Main/ListSlider.vue";
+
+export default {
+  components: {
+    HeaderSlider,
+    ListSlider,
+  },
+};
 </script>
 
 <style></style>

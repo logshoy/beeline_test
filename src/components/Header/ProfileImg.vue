@@ -1,7 +1,6 @@
-!
 <template>
   <div>
-    <img src="" />
+    <img src="@/assets/Avatar.png" />
   </div>
   <div>
     <div>

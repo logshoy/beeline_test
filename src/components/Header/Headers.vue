@@ -1,6 +1,6 @@
 <template>
   <header
-    class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+    class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom sticky"
   >
     <LinkHeader />
     <ProfileBlock />
@@ -21,4 +21,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 10vh;
+  background: green;
+}
+</style>

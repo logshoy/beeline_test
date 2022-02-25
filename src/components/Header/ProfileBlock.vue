@@ -6,10 +6,16 @@
       <div class="nav-link">1200<span>часов</span></div>
     </li>
   </ul>
+  <ProfileImg />
 </template>
 
 <script>
-export default {};
+import ProfileImg from "@/components/Header/ProfileImg.vue";
+export default {
+  components: {
+    ProfileImg,
+  },
+};
 </script>
 
 <style></style>

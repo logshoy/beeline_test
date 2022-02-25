@@ -1,9 +1,9 @@
 <template>
   <div class="layout">
-    <aside class="layout__aside"><SideBar /></aside>
+    <Headers />
     <main class="layout__main">
-      <Headers />
-      <router-view />
+      <aside class="layout__aside"><SideBar /></aside>
+      <div class="view"><router-view /></div>
     </main>
   </div>
 </template>
@@ -34,27 +34,36 @@ export default {
     rgba(255, 255, 255, 0.1) 100%
   );
   mix-blend-mode: normal;
+  max-width: 100%;
   height: 100vh;
   height: -webkit-fill-available;
-  max-height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  max-height: 100%;
+}
+
+.view {
+  margin: 0;
+  padding: 0;
+  margin-left: 20%;
+  // width: 70%;
 }
 
 .layout {
   display: flex;
-  height: 100vh;
+  position: relative;
 
   &__main {
-    order: 2;
-    width: auto;
+    display: flex;
+    // order: 2;
     flex: 1 0 auto;
   }
   &__aside {
-    order: 1;
-    width: 300px;
+    // order: 1;
+    width: 20%;
     flex: 0 0 auto;
     height: 100vh;
+    position: fixed;
+    z-index: 30;
   }
 }
 </style>
