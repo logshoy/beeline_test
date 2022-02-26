@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <HeaderSlider />
-    <ListSlider />
-  </div>
-  <div>
-    <HeaderSlider />
-    <ListSlider />
+  <div class="main__">
+    <div>
+      <HeaderSlider />
+      <ListSlider />
+    </div>
+    <div>
+      <HeaderSlider />
+      <ListSlider />
+    </div>
   </div>
 </template>
 

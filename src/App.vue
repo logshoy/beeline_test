@@ -34,18 +34,24 @@ export default {
     rgba(255, 255, 255, 0.1) 100%
   );
   mix-blend-mode: normal;
-  max-width: 100%;
+  width: 100%;
   height: 100vh;
   height: -webkit-fill-available;
   overflow-x: hidden;
   max-height: 100%;
 }
 
+ul {
+  list-style: none;
+}
+
 .view {
   margin: 0;
   padding: 0;
-  margin-left: 20%;
-  // width: 70%;
+  margin-left: 25%;
+  margin-right: 10vh;
+  margin-top: 10vh;
+  width: 100%;
 }
 
 .layout {
@@ -55,6 +61,7 @@ export default {
   &__main {
     display: flex;
     // order: 2;
+    margin-top: 10vh;
     flex: 1 0 auto;
   }
   &__aside {
@@ -64,6 +71,9 @@ export default {
     height: 100vh;
     position: fixed;
     z-index: 30;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 }
 </style>
