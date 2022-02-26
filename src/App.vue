@@ -34,6 +34,11 @@
       <!-- <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon> -->
 
       <!-- <v-toolbar-title>Application</v-toolbar-title> -->
+      <v-list class="flex">
+        <div class="button" v-for="item in link" :key="item.title">
+          <v-button>{{ item.title }}</v-button>
+        </div>
+      </v-list>
     </v-app-bar>
 
     <v-main>
@@ -51,6 +56,7 @@ export default {
       { title: "Account", icon: "mdi-account-box" },
       { title: "Admin", icon: "mdi-gavel" },
     ],
+    link: [{ title: "Faq" }, { title: "Faq" }, { title: "Faq" }],
   }),
 };
 </script>
@@ -67,9 +73,9 @@ export default {
   min-height: 100vh;
 }
 
-.header {
-  /* min-height: 10vh; */
-  /* height: 15vh; */
+.button {
+  margin: 5px;
+  padding: 5px;
 }
 
 .mainS {
