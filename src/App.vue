@@ -1,79 +1,83 @@
 <template>
-  <div class="layout">
-    <Headers />
-    <main class="layout__main">
-      <aside class="layout__aside"><SideBar /></aside>
-      <div class="view"><router-view /></div>
-    </main>
-  </div>
+  <v-app id="inspire">
+    <v-navigation-drawer permanent>
+      <div class="flex">
+        <v-img
+          class="mx-2"
+          src="https://i.imgur.com/qgGY4tB.png"
+          max-height="40"
+          max-width="40"
+          contain
+        ></v-img>
+        <v-toolbar-title class="ml-2"> Page title </v-toolbar-title>
+      </div>
+      <v-list>
+        <v-list-item v-for="item in items" :key="item.title" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+      <template v-slot:append>
+        <div class="pa-2">
+          <v-btn block> Logout </v-btn>
+        </div>
+      </template>
+    </v-navigation-drawer>
+
+    <v-app-bar app color="black">
+      <!-- <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon> -->
+
+      <!-- <v-toolbar-title>Application</v-toolbar-title> -->
+    </v-app-bar>
+
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-// @ is an alias to /src
-import Headers from "@/components/Header/Headers.vue";
-import SideBar from "@/components/SideBar/SideBar.vue";
-
 export default {
-  components: {
-    Headers,
-    SideBar,
-  },
+  data: () => ({
+    drawer: !null,
+    items: [
+      { title: "Dashboard", icon: "mdi-view-dashboard" },
+      { title: "Account", icon: "mdi-account-box" },
+      { title: "Admin", icon: "mdi-gavel" },
+    ],
+  }),
 };
 </script>
 
-<style lang="scss">
+<style scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.0001) 0%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
-  mix-blend-mode: normal;
-  width: 100%;
-  height: 100vh;
-  height: -webkit-fill-available;
-  overflow-x: hidden;
-  max-height: 100%;
-}
-
-ul {
-  list-style: none;
-}
-
-.view {
+  height: 100%;
   margin: 0;
   padding: 0;
-  margin-left: 25%;
-  margin-right: 10vh;
-  margin-top: 10vh;
-  width: 100%;
 }
 
-.layout {
-  display: flex;
-  position: relative;
+.height100 {
+  margin-top: 64px;
+  min-height: 100vh;
+}
 
-  &__main {
-    display: flex;
-    // order: 2;
-    margin-top: 10vh;
-    flex: 1 0 auto;
-  }
-  &__aside {
-    // order: 1;
-    width: 20%;
-    flex: 0 0 auto;
-    height: 100vh;
-    position: fixed;
-    z-index: 30;
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
+.header {
+  /* min-height: 10vh; */
+  /* height: 15vh; */
+}
+
+.mainS {
+  margin-left: 20vh;
+  margin-bottom: 64px;
+}
+
+.flex {
+  display: flex;
 }
 </style>
