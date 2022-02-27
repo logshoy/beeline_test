@@ -29,7 +29,6 @@
         </div>
       </template>
     </v-navigation-drawer>
-
     <v-app-bar app color="black">
       <!-- <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon> -->
 
@@ -49,6 +48,7 @@
 
 <script>
 export default {
+  components: {},
   data: () => ({
     drawer: !null,
     items: [

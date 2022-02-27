@@ -1,13 +1,13 @@
 <template>
-  <div class="main__">
+  <div>
     <div>
       <HeaderSlider />
       <ListSlider />
     </div>
-    <div>
+    <!-- <div>
       <HeaderSlider />
       <ListSlider />
-    </div>
+    </div> -->
   </div>
 </template>
 

@@ -1,35 +1,23 @@
 <template>
-  <div class="album">
-    <ul class="container flex">
-      <li v-for="item in items" v-bind:key="item.id">
-        <SliderItem />
-      </li>
-      <!-- <li class="sliderItem"><SliderItem /></li>
-      <li class="sliderItem"><SliderItem /></li>
-      <li class="sliderItem"><SliderItem /></li>
-      <li class="sliderItem"><SliderItem /></li> -->
-    </ul>
-  </div>
+  <v-sheet class="mx-auto" elevation="8" max-width="800">
+    <v-slide-group class="pa-4" center-active show-arrows>
+      <v-slide-item flex v-for="n in 5" :key="n">
+        <v-card class="ma-4" height="200" width="100">
+          <v-row class="fill-height" justify="center"> </v-row>
+        </v-card>
+      </v-slide-item>
+    </v-slide-group>
+  </v-sheet>
 </template>
 
 <script>
-import SliderItem from "@/components/Main/SliderItem.vue";
 export default {
-  data() {
-    return {
-      items: ["1", "2", "3", "4", "5"],
-    };
-  },
-  components: {
-    SliderItem,
-  },
+  data: () => ({
+    model: null,
+    active: true,
+    toggle: true,
+  }),
 };
 </script>
 
-<style>
-.sliderItem {
-  width: 25%;
-  max-width: 25%;
-  margin: 5px;
-}
-</style>
+<style></style>
